@@ -12,7 +12,7 @@
             android:layout_height="fill_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Получатель"
@@ -20,7 +20,7 @@
                 android:layout_column="0" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
@@ -38,7 +38,7 @@
             android:layout_height="fill_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Тема"
@@ -46,7 +46,7 @@
                 android:layout_column="0" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
@@ -66,7 +66,7 @@
             android:layout_height="fill_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textView8"
@@ -74,7 +74,7 @@
                 android:text="Рег. номер" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
@@ -97,7 +97,7 @@
             android:layout_height="fill_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Координаты"
@@ -105,7 +105,7 @@
                 android:layout_column="0" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
@@ -192,7 +192,8 @@
                 android:text="@android:string/ok"
                 android:id="@+id/button3"
                 android:layout_column="0"
-                android:layout_span="3" />
+                android:layout_span="3"
+                android:nestedScrollingEnabled="true" />
         </TableRow>
 
     </TableLayout>

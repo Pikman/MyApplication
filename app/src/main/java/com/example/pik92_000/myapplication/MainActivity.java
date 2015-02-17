@@ -90,6 +90,8 @@ public class MainActivity extends ActionBarActivity
             case 2:
                 mTitle = getString(R.string.title_section2);
                 // setContentView(R.layout.kalendar);
+                startActivity(new Intent (MainActivity.this, ViewActivity.class));
+
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
@@ -159,6 +161,7 @@ public class MainActivity extends ActionBarActivity
 
 
     public void onClickAdd(View view){
+
         Intent intent = new Intent(MainActivity.this, PrepareAdd.class);
         intent.putExtra("Receiver", txtReceiver.getText().toString());
         intent.putExtra("Theme", txtTheme.getText().toString());

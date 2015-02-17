@@ -42,7 +42,7 @@ public class PrepareAdd extends ActionBarActivity {
         NumTextView.setText(""+OutNum + " " + InpNum);
 
         TextView MapsCord = (TextView)findViewById(R.id.textView5);
-        MapsCord.setText("Координаты объекта: " + MapsActivity.MarkLat + " " + MapsActivity.MarkLong);
+        MapsCord.setText(MapsActivity.MarkLat + " " + MapsActivity.MarkLong);
     }
 
 
@@ -82,5 +82,9 @@ public class PrepareAdd extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_prepare_add, container, false);
             return rootView;
         }
+    }
+
+    public void AddInDb (){
+
     }
 }
