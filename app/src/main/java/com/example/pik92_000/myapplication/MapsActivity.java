@@ -27,43 +27,43 @@ import android.os.Bundle;
 public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapLongClickListener,
         OnMapClickListener,OnMarkerDragListener, OnMapReadyCallback {
 
-    static double MarkLat = 0, MarkLong = 0;
+    static double MarkLat = 55.7558, MarkLong = 37.6173;
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-
-        mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                .getMap();
-
-        //MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
-        //mapFragment.getMapAsync(this);
-
-        mMap.setOnMapLongClickListener(this);
-        mMap.setOnMarkerDragListener(this);
-        mMap.setOnMapClickListener(this);
-
-        Toast.makeText(getApplicationContext(), "Точка установлена в "+ MarkLat + MarkLong, Toast.LENGTH_LONG).show();
-
-        onMapReady(mMap);
-    }
-
-
-
-    @Override
-    public void onMapReady(GoogleMap map) {
-        LatLng moscow = new LatLng(55.7558, 37.6173);
-
+        mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         mMap.setMyLocationEnabled(true);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(moscow, 13));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(MarkLat, MarkLong), 13));
 
         mMap.addMarker(new MarkerOptions()
                 .title("Marker")
                 .snippet("The most populous city in Australia.")
                 .position(new LatLng(MarkLat, MarkLong))
                 .draggable(true));
+
+        Toast.makeText(getApplicationContext(), "Точка установлена в "+ MarkLat + MarkLong, Toast.LENGTH_LONG).show();
+
+
+
+        //onMapReady(mMap);
+
+        //MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        //mapFragment.getMapAsync(this);
+
+
+
+
+
+    }
+
+
+
+    @Override
+    public void onMapReady(GoogleMap Map) {
+        //LatLng moscow = new LatLng(55.7558, 37.6173);
 
     }
 
