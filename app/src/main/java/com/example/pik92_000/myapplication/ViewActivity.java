@@ -4,14 +4,36 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ViewActivity extends ActionBarActivity {
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
+        ListView listView = (ListView) findViewById(R.id.listView);
+
+        db DB = new db(MyApp.getAppContext());
+
+        List<Letter> list = DB.getLetters();
+        List<String> array = new ArrayList<String>();
+        for (Letter l:list) {
+            array.add(l.toString());
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, array );
+
+        listView.setAdapter(adapter);
+
     }
 
 

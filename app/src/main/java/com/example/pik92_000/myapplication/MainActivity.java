@@ -54,10 +54,7 @@ public class MainActivity extends ActionBarActivity
         OutNum = (EditText) findViewById(R.id.OutNum);
         InpNum = (EditText) findViewById(R.id.InpNum);
 
-        db sqh = new db(this);
-        SQLiteDatabase sqdb = sqh.getWritableDatabase();
-        sqdb.close();
-        sqh.close();
+
 
 
 
@@ -168,6 +165,18 @@ public class MainActivity extends ActionBarActivity
         intent.putExtra("OutNum", OutNum.getText().toString());
         intent.putExtra("InpNum", InpNum.getText().toString());
         startActivity(intent);
+
+        db DB = new db(MyApp.getAppContext());
+        Letter letter = new Letter();
+        letter.Receiver = txtReceiver.getText().toString();
+        letter.Theme = txtTheme.getText().toString();
+        letter.OutNum = Integer.valueOf(OutNum.getText().toString());
+        letter.InpNum = Integer.valueOf(InpNum.getText().toString());
+        letter.Lat = MapsActivity.MarkLat;
+        letter.Lng = MapsActivity.MarkLong;
+        DB.addLetter(letter);
+
+
 
         Toast.makeText(getApplicationContext(), "Marker v "+MapsActivity.MarkLat, Toast.LENGTH_LONG).show();
         //ContentValues cv = new ContentValues();
